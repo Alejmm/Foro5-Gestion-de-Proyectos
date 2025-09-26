@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\renewcommand{\baselinestretch}{1.0}
+
+% Títulos numerados en negrita, sin sangría extra
+\titleformat{\section}[block]{\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}[block]{\bfseries}{}{0em}{}
+
+\begin{document}
+
+\begin{center}
+\textbf{\MakeUppercase{GESTIÓN E IMPLEMENTACIÓN DE PROYECTOS}}\\[1ex]
+\textit{C. A. Melgar Ordoñez}\\
+\textit{7690-21-8342 Universidad Mariano Gálvez de Guatemala}\\
+\textit{Seminario de Tecnologías}\\
+\textit{cmelgaro@miumg.edu.gt}\\
+\url{https://github.com/Alejmm/Foro5-Gestion-de-Proyectos}\\
+\end{center}
+
+\vspace{1em}
+
+\section*{Resumen}
+Este ensayo explora cuatro pilares que suelen definir si un proyecto tecnológico aporta valor real: el retorno de inversión (ROI), el análisis costo–beneficio, la factibilidad y como garantizar la calidad en un proyecto. Inicialmente se plantea el ROI como una métrica para traducir impactos técnicos en resultados económicos medibles, considerando no solo ingresos, sino ahorros operativos y reducción de riesgos. Luego, el análisis costo–beneficio se utiliza para comparar alternativas y priorizar entregables, incorporando costos ocultos (mantenimiento, capacitación y soporte) y beneficios intangibles (satisfacción del usuario, cumplimiento normativo). En tercer lugar, la factibilidad se aborda desde tres dimensiones prácticas: técnica (recursos y compatibilidad), económica (presupuesto y flujo de caja) y operativa (capacidades del equipo y curva de aprendizaje). Finalmente, se propone un enfoque de calidad basado en requisitos claros, criterios de aceptación verificables y controles continuos: pruebas automatizadas donde agreguen valor, revisiones por pares, métricas de desempeño y retroalimentación del usuario. El documento sintetiza una ruta de decisión pragmática: cuantificar, comparar, validar y mejorar. Con ello, se busca demostrar cómo un proyecto puede ser rentable, sostenible y confiable, minimizando riesgos y alineando la solución con objetivos del negocio y expectativas del usuario final.
+
+\section*{Palabras clave}
+ROI, análisis costo–beneficio, factibilidad técnica, factibilidad económica, calidad de software, criterios de aceptación, métricas de desempeño, pruebas automatizadas, gestión de riesgos, sostenibilidad del proyecto.
+
+\section{Desarrollo}
+
+\subsection{ROI}
+El retorno de inversión (ROI) es el puente entre lo que cuesta construir una solución y el valor que realmente genera. La fórmula base es: \textbf{ROI = (Beneficio neto / Inversión total) $\times$ 100}. La clave es definir bien ``beneficio neto'': no es solo más ventas; también son horas operativas ahorradas, reducción de incidencias, menos retrabajo y riesgos mitigados (por ejemplo, penalizaciones o caídas de servicio).
+
+Para un ROI se debe distinguir tres capas: (1) \textit{ingresos y ahorros directos} (nuevos contratos, automatización que evita horas hombre, licencias redundantes eliminadas); (2) \textit{eficiencias medibles} (tiempos de proceso más cortos, menos tickets mensuales, menor consumo de infraestructura); y (3) \textit{riesgo y cumplimiento} (evitar multas o pérdidas por incumplir requisitos de seguridad o auditoría).
+
+También es importante ajustar por \textbf{tiempo} y \textbf{riesgo}: el dinero hoy vale más que el de mañana (descuento a valor presente) y no todos los beneficios ocurren con la misma probabilidad (aplicar factores de probabilidad). Un horizonte en 6, 12 y 24 meses evita lecturas optimistas de corto plazo. 
+
+\subsection{Análisis costo–beneficio}
+El análisis costo–beneficio (C/B) sirve para priorizar con datos, no con suposiciones. Los pasos mínimos son: (a) identificar costos totales (desarrollo, pruebas, capacitación, migraciones, licencias, soporte, observabilidad, retiro de sistemas viejos y costo de oportunidad del equipo); (b) identificar beneficios totales (ingresos, ahorros y externalidades positivas como cumplimiento o satisfacción de usuario, monetizadas por aproximación); (c) comparar alternativas (A: rápida y limitada vs. B: más cara pero escalable) en un horizonte de 18–24 meses; (d) análisis de sensibilidad y escenarios (pesimista, esperado, optimista) para tolerar variaciones de precios y demanda; y (e) calcular el \textit{punto de equilibrio} para saber cuándo los beneficios acumulados superan la inversión.
+
+Una matriz de ponderación ayuda a transparentar decisiones: por ejemplo, 40\% beneficio económico, 25\% riesgo, 20\% tiempo de entrega, 15\% experiencia de usuario. No reemplaza los números, pero ayuda a visualizar los datos.
+
+\subsection{Factibilidad}
+La factibilidad es dinámica: se revalida en cada fase. 
+\textbf{Técnica}: compatibilidad con la arquitectura actual (lenguajes, frameworks, SSO, políticas de seguridad), límites no funcionales (latencia, concurrencia, escalabilidad) y dependencias (APIs, datos). 
+\textbf{Económica}: además del presupuesto total, importa el \textit{flujo de caja} mensual; un proyecto rentable puede ser inviable si concentra costos al inicio y los retornos son tardíos. 
+\textbf{Operativa}: capacidad real de operar y mantener la solución (soporte, despliegues, monitoreo, respaldos) y la curva de aprendizaje del personal. 
+\textbf{Legal y cumplimiento}: privacidad, auditoría, retención y requisitos sectoriales pueden bloquear si se ignoran. 
+
+Checklist de entrada: (1) endpoint crítico probado con datos reales sanitizados; (2) prueba de carga mínima (2$\times$ el pico esperado); (3) pipeline de CI/CD con linter y pruebas básicas; (4) plan de rollback documentado; (5) logging y métricas visibles en un tablero.
+
+\subsection{Cómo garantizar la calidad del proyecto}
+La calidad no se agrega al final; se diseña desde el inicio con criterios verificables.
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Requisitos claros y criterios de aceptación}: cada historia especifica qué valida y cómo medirlo, definiendo requisitos y criterios desde el inicio del proyecto.
+  \item \textbf{Estrategia de pruebas por riesgo}: unidades (reglas y bordes), integración/contratos (versionado de API, timeouts, idempotencia), E2E para flujos críticos y no funcionales (rendimiento, seguridad básica, recuperación).
+  \item \textbf{Revisiones por pares y estándares de código}: listas de verificación en PRs para nombres claros, manejo de errores, logs útiles y pruebas incluidas.
+  \item \textbf{Observabilidad desde el día 1}: logs estructurados, métricas de negocio (éxito/fracaso por caso de uso), \textit{health checks} y alertas simples.
+  \item \textbf{Métricas de entrega y calidad}: tiempo de ciclo, tasa de fallos por cambio, MTTR, densidad de defectos y cobertura útil (evitar perseguir porcentajes vacíos).
+  \item \textbf{Gestión de deuda técnica}: backlog visible de deudas, con impacto y costo de no atenderlas; reservar capacidad en cada iteración.
+  \item \textbf{Feedback real de usuarios}: betas controladas, encuestas breves en flujo y analítica de uso para ajustar con evidencia.
+\end{itemize}
+
+\section{Observaciones y comentarios}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Claridad de alcance}: Cada beneficio declarado en ROI debe tener fuente de datos y verificación independiente.
+  \item \textbf{Costos ocultos}: Tomar en cuenta capacitación, mantenimiento y soporte deben presupuestarse desde el inicio para no distorsionar el C/B.
+  \item \textbf{Calidad desde el diseño}: criterios de aceptación medibles y observabilidad deben de ser tomados y definidos desde los cimientos del proyecto.
+  \item \textbf{Gestión de riesgos y rollback}: trabajar escenarios (pesimista/esperado/optimista) y probar el plan de reversión antes.
+\end{itemize}
+
+\section{Conclusiones}
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Medir primero, decidir después}: el ROI debe construirse con beneficios netos verificables, ajustados por tiempo y probabilidad.
+  \item \textbf{Costo–beneficio es comparación, no intuición}: incluir costos de operación y beneficios intangibles monetizados; usar sensibilidad y escenarios.
+  \item \textbf{La factibilidad es un semáforo continuo}: revalidar viabilidad técnica, económica y operativa en cada fase, apoyándose en PoC.
+  \item \textbf{La calidad se diseña}: criterios medibles, pruebas automatizadas útiles, revisión por pares y observabilidad desde el inicio.
+  \item \textbf{Entregas incrementales maximizan valor}: adelantan ahorros/ingresos, validan hipótesis y permiten recalibrar sin apuestas gigantes.
+\end{enumerate}
+
+\section{Bibliografía}
+\begin{itemize}[leftmargin=2em]
+  \item Boardman, A. E., Greenberg, D. H., Vining, A. R., \& Weimer, D. L. (2018). \textit{Cost–Benefit Analysis: Concepts and Practice} (4th ed.). Cambridge University Press.
+  \item Pressman, R. S., \& Maxim, B. R. (2019). \textit{Ingeniería de software: Un enfoque práctico} (9.ª ed.). McGraw-Hill.
+  \item Sommerville, I. (2016). \textit{Software Engineering} (10th ed.). Pearson.
+  \item Project Management Institute. (2021). \textit{A Guide to the Project Management Body of Knowledge (PMBOK\textsuperscript{\textregistered} Guide)} (7th ed.). PMI.
+  \item Wiegers, K., \& Beatty, J. (2013). \textit{Software Requirements} (3rd ed.). Microsoft Press.
+  \item ISO/IEC/IEEE. (2018). \textit{ISO/IEC/IEEE 29148:2018 — Systems and software engineering — Life cycle processes — Requirements engineering}. International Organization for Standardization.
+  \item ISO/IEC. (2011). \textit{ISO/IEC 25010:2011 — Systems and software engineering — SQuaRE — System and software quality models}. International Organization for Standardization.
+\end{itemize}
+
+\end{document}
